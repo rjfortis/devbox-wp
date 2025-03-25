@@ -31,6 +31,8 @@ sed -i "s/define( 'DB_PASSWORD', '.*' );/define( 'DB_PASSWORD', '' );/" wp-confi
 
 sed -i "s/define( 'DB_HOST', '.*' );/define( 'DB_HOST', \$mysql_unix_port );/" wp-config.php
 
+rm -rf .git
+
 ```
 
 ## if you want setup a vitetheme
