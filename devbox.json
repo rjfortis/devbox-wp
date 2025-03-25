@@ -19,7 +19,7 @@
         "php -S localhost:8000 > server.log 2>&1 &",
       ],
       "start_services": [
-        "mysqld > mysqlog.log 2>&1 &"
+        "mysqld > mysqlog.log 2>&1 &",
         "php -S localhost:8000 > server.log 2>&1 &",
         "cd ~/code/wordpress/wp-content/themes/rfmtheme && npm run dev"
       ],
