@@ -1,1 +1,5 @@
-mysqlog.log
+# Log files
+*.log
+
+# Lock files
+*.lock

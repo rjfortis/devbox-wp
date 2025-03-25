@@ -1,22 +1,28 @@
 
+STEPS
 
+git clone https://github.com/rjfortis/devbox-wp
 
-1. git clone https://github.com/rjfortis/devbox-wp
+cd devbox-wp
 
-2. cd devbox-wp
+devbox shell
 
-3. devbox shell
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
-6. curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
 
-7. chmod +x wp-cli.phar
-
-8. wp-cli.phar core download
-
-9. wp-cli.phar db create
-
-10. sed -i "/define( 'DB_HOST'/i\$mysql_unix_port = \"localhost:\" . getenv(\"MYSQL_UNIX_PORT\");" wp-config-sample.php
-
-11. wp config create --dbname=wordpress_db --dbuser=root --dbpass= --dbhost=$mysql_unix_port
+php -d memory_limit=256M wp-cli.phar core download
 
 mysql -u root -e "CREATE DATABASE wordpress_db;"
+
+sed -i "/define( 'DB_HOST'/i\$mysql_unix_port = \"localhost:\" . getenv(\"MYSQL_UNIX_PORT\");" wp-config-sample.php
+
+cp wp-config-sample.php wp-config.php
+
+sed -i "s/define( 'DB_NAME', '.*' );/define( 'DB_NAME', 'wordpress_db' );/" wp-config.php
+
+sed -i "s/define( 'DB_USER', '.*' );/define( 'DB_USER', 'root' );/" wp-config.php
+
+sed -i "s/define( 'DB_PASSWORD', '.*' );/define( 'DB_PASSWORD', '' );/" wp-config.php
+
+sed -i "s/define( 'DB_HOST', '.*' );/define( 'DB_HOST', \$mysql_unix_port );/" wp-config.php
