@@ -1,5 +1,7 @@
 
-STEPS
+# STEPS
+
+```bash
 
 git clone https://github.com/rjfortis/devbox-wp
 
@@ -29,7 +31,11 @@ sed -i "s/define( 'DB_PASSWORD', '.*' );/define( 'DB_PASSWORD', '' );/" wp-confi
 
 sed -i "s/define( 'DB_HOST', '.*' );/define( 'DB_HOST', \$mysql_unix_port );/" wp-config.php
 
+```
+
 ## if you want setup a vitetheme
+
+```bash
 
 devbox run stop_services
 
@@ -38,3 +44,5 @@ git clone git@github.com:rjfortis/rfmtheme.git wp-content/themes/rfmtheme
 devbox run npm_install
 
 devbox run start_services
+
+```
