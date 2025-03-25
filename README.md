@@ -5,11 +5,7 @@
 
 2. cd devbox-wp
 
-3. direnv allow
-
-4. cd ..
-
-5. cd devbox-wp
+3. devbox shell
 
 6. curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
@@ -23,3 +19,4 @@
 
 11. wp config create --dbname=wordpress_db --dbuser=root --dbpass= --dbhost=$mysql_unix_port
 
+mysql -u root -e "CREATE DATABASE wordpress_db;"
