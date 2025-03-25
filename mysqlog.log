@@ -1,0 +1,8 @@
+2025-03-25T15:53:56.994810Z 0 [System] [MY-010116] [Server] /home/rfmdev/code/devbox-wp/.devbox/nix/profile/default/bin/mysqld (mysqld 8.0.41) starting as process 1919
+2025-03-25T15:53:57.009704Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-03-25T15:53:58.096617Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-03-25T15:53:58.452455Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of socket: '/run/mysqld/mysqlx.sock' failed, can't create lock file /run/mysqld/mysqlx.sock.lock'
+2025-03-25T15:53:58.940671Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-03-25T15:53:58.940813Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-03-25T15:53:59.008782Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2025-03-25T15:53:59.008865Z 0 [System] [MY-010931] [Server] /home/rfmdev/code/devbox-wp/.devbox/nix/profile/default/bin/mysqld: ready for connections. Version: '8.0.41'  socket: '/home/rfmdev/code/devbox-wp/.devbox/virtenv/mysql80/run/mysql.sock'  port: 3306  Source distribution.

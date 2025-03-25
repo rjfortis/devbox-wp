@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.14.0/.schema/devbox.schema.json",
+  "packages": [
+    "php@8.3",
+    "mysql80@latest",
+    "sass@latest",
+    "nodejs@22.14.0"
+  ],
+  "shell": {
+    "init_hook": [
+      "mysqld > mysqlog.log 2>&1 &"
+    ],
+    "scripts": {
+      "start_services": [
+        "php -S localhost:8000 > server.log 2>&1 &",
+        "cd ~/code/wordpress/wp-content/themes/rfmtheme && npm run dev"
+      ],
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
