@@ -8,12 +8,12 @@
   ],
   "shell": {
     "init_hook": [
-      "mysqld > mysqlog.log 2>&1 &"
     ],
     "scripts": {
       "start_services": [
+        "mysqld > mysqlog.log 2>&1 &"
         "php -S localhost:8000 > server.log 2>&1 &",
-        "cd ~/code/wordpress/wp-content/themes/rfmtheme && npm run dev"
+        //"cd ~/code/wordpress/wp-content/themes/rfmtheme && npm run dev"
       ],
       "test": [
         "echo \"Error: no test specified\" && exit 1"
