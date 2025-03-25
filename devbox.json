@@ -10,10 +10,18 @@
     "init_hook": [
     ],
     "scripts": {
+      "start_initservices": [
+        "mysqld > mysqlog.log 2>&1 &"
+        "php -S localhost:8000 > server.log 2>&1 &",
+      ],
+      "stop_initservices": [
+        "mysqld > mysqlog.log 2>&1 &"
+        "php -S localhost:8000 > server.log 2>&1 &",
+      ],
       "start_services": [
         "mysqld > mysqlog.log 2>&1 &"
         "php -S localhost:8000 > server.log 2>&1 &",
-        //"cd ~/code/wordpress/wp-content/themes/rfmtheme && npm run dev"
+        "cd ~/code/wordpress/wp-content/themes/rfmtheme && npm run dev"
       ],
       "test": [
         "echo \"Error: no test specified\" && exit 1"

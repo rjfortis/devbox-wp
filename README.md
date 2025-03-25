@@ -7,6 +7,16 @@ cd devbox-wp
 
 devbox shell
 
+<if you want setup a vitetheme >
+
+git clone git@github.com:rjfortis/rfmtheme.git wp-content/themes/rfmtheme
+
+sed -i 's|^\s*//+++ "\(.*\)"|\x22\1\x22|' devbox.json
+
+<endif>
+
+devbox run start_services
+
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
 chmod +x wp-cli.phar
@@ -26,3 +36,5 @@ sed -i "s/define( 'DB_USER', '.*' );/define( 'DB_USER', 'root' );/" wp-config.ph
 sed -i "s/define( 'DB_PASSWORD', '.*' );/define( 'DB_PASSWORD', '' );/" wp-config.php
 
 sed -i "s/define( 'DB_HOST', '.*' );/define( 'DB_HOST', \$mysql_unix_port );/" wp-config.php
+
+
